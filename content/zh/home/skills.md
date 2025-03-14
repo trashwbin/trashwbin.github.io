@@ -1,5 +1,5 @@
 ---
-title: "技能属性"
+title: "专业知识"
 draft: false
 weight: 3
 --- 

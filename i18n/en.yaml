@@ -25,6 +25,36 @@ about_interests: "frontend, algorithms, and artificial intelligence"
 about_opensource: "open source"
 about_contact: "contact me"
 
+# Skills page
+skill_level_expert: "Expert"
+skill_level_proficient: "Proficient"
+skill_level_good: "Good"
+skill_level_basic: "Basic"
+
+skill_java_title: "Java"
+skill_java_desc: "Deep expertise in Java core technologies and JVM tuning, with extensive enterprise project experience. Proficient in Spring ecosystem for microservices architecture, with strong focus on high-concurrency and distributed systems."
+
+skill_go_title: "Go"
+skill_go_desc: "Proficient in Go language features and concurrent programming model. Experience in developing IM systems and e-commerce platforms. Capable of high-performance server-side development."
+
+skill_vue_title: "Vue.js"
+skill_vue_desc: "Deep understanding of Vue.js framework principles, experienced in component-based development and state management. Capable of building modern SPAs with Vue ecosystem."
+
+skill_cpp_title: "C++"
+skill_cpp_desc: "Solid understanding of C++ core syntax and memory management. Project development experience, mainly used for algorithmic competitions."
+
+skill_db_title: "Databases"
+skill_db_desc: "Expert in MySQL database principles and performance optimization. Experience in designing key-value storage engines. Familiar with distributed database architecture and transaction processing."
+
+skill_js_title: "JavaScript"
+skill_js_desc: "Proficient in modern JavaScript development, including ES6+ features and asynchronous programming. Capable of developing rich interactive web applications using mainstream frameworks."
+
+skill_python_title: "Python"
+skill_python_desc: "Proficient in Python basics and common libraries. Capable of developing automation scripts and data analysis tools. Understanding of Python applications in AI."
+
+skill_algo_title: "Algorithms"
+skill_algo_desc: "Strong foundation in data structures and algorithms. Proficient in various classic algorithms. Capable of solving complex engineering problems with elegant and efficient code."
+
 # Contact page
 contact_header: "Let's Connect! 👋"
 contact_description: "I'm collaborating with individuals from diverse fields, which is precisely why I created this website."
