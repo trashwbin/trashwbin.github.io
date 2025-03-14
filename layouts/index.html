@@ -57,12 +57,16 @@
   {{ $pages := .Resources.ByType "page" }}
 
   {{ range sort $pages "Params.weight" }}
-  {{ if and (ne .Name "contact.md") (ne .Name "skills.md") }}
-  <!-- Range through all sections in /home except contact.md and skills.md -->
+  {{ if ne .Name "contact.md" }}
+  <!-- Range through all sections in /home except contact.md -->
   <div class="section" id="{{ .File.TranslationBaseName }}">
     <div class="container">
       <h2 class="title is-2 has-text-centered">{{ .Title | markdownify }}</h2>
-      {{ if .Params.Image }}
+      {{ if eq .File.TranslationBaseName "skills" }}
+      {{ partial "home/skills.html" . }}
+      {{ else if eq .File.TranslationBaseName "about" }}
+      {{ partial "home/about.html" . }}
+      {{ else if .Params.Image }}
       <div class="columns">
         <div class="column is-one-third has-text-centered">
           {{ with $home.Resources.GetMatch .Params.Image }}
@@ -88,12 +92,6 @@
   </div>
   {{ end }}
   {{ end }}
-
-  <!-- 插入技能部分 -->
-  {{ partial "home/skills.html" . }}
-  <div class="container">
-    <hr>
-  </div>
 
   <!-- 联系部分 -->
   {{ with .Resources.GetMatch "contact.md" }}
@@ -146,83 +144,6 @@
           });
         });
       }
-
-      // 滚动触发动画
-      const animatedElements = document.querySelectorAll('.animate__animated');
-
-      // 初始化时隐藏所有动画元素
-      animatedElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.visibility = 'hidden';
-      });
-
-      // 检查元素是否在视口中
-      function isInViewport(element) {
-        const rect = element.getBoundingClientRect();
-        return (
-          rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
-          rect.bottom >= 0
-        );
-      }
-
-      // 滚动时检查并触发动画
-      function checkAnimations() {
-        animatedElements.forEach(el => {
-          if (isInViewport(el) && el.style.visibility === 'hidden') {
-            el.style.visibility = 'visible';
-            el.style.opacity = '1';
-            // 保留原始的动画延迟
-            const delay = el.style.animationDelay;
-            // 移除所有动画类
-            el.className = el.className.replace(/\banimate__\S+/g, '');
-            // 重新添加动画类
-            void el.offsetWidth; // 触发重绘
-            el.className += ' ' + el.getAttribute('data-animation');
-            if (delay) {
-              el.style.animationDelay = delay;
-            }
-          }
-        });
-      }
-
-      // 在页面加载时保存原始动画类
-      animatedElements.forEach(el => {
-        const animationClass = el.className.match(/animate__([a-zA-Z]+)/);
-        if (animationClass && animationClass[0]) {
-          el.setAttribute('data-animation', animationClass[0]);
-        }
-      });
-
-      // 监听滚动事件
-      window.addEventListener('scroll', checkAnimations);
-
-      // 初始检查
-      checkAnimations();
-
-      // 进度条动画
-      const progressBars = document.querySelectorAll('.progress-bar');
-
-      function animateProgressBars() {
-        progressBars.forEach(bar => {
-          const parent = bar.closest('.skill-card');
-          if (isInViewport(parent) && bar.style.width === '0px') {
-            // 获取设置的宽度
-            const targetWidth = bar.getAttribute('style').match(/width:\s*(\d+)%/)[1];
-            // 先设置为0
-            bar.style.width = '0%';
-            // 延迟一下再设置目标宽度，触发动画
-            setTimeout(() => {
-              bar.style.width = targetWidth + '%';
-            }, 100);
-          }
-        });
-      }
-
-      // 监听滚动事件
-      window.addEventListener('scroll', animateProgressBars);
-
-      // 初始检查
-      animateProgressBars();
     });
   </script>
 </body>

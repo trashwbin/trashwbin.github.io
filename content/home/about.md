@@ -4,28 +4,12 @@ draft: false
 weight: 2
 ---
 
-### 个人介绍 👨🏽‍💻
-
-大家好，我是 Abin！
-
-- 🎓 目前是一名二年级的学生，正在深入学习软件工程
-- 🚀 热衷于后端开发，同时对前端、算法和人工智能充满兴趣
-- 💡 热爱开源，希望有朝一日能够启动自己的项目
-- 🤝 对合作充满热情，欢迎一起探讨项目
-- 💬 随时欢迎交流，您的问题就是我进步的动力
-
-### 技术栈
-
-我正在不断学习和提升自己的技术能力，目前主要关注：
-
-- 后端开发
-- 算法设计
-- 人工智能
-- 前端技术
-
-### 联系方式
-
-- 📧 Email: [Trashwbin@gmail.com](mailto:Trashwbin@gmail.com)
-- 🌐 Gitee: [Trashwbin](https://gitee.com/trashwbin)
-
-> "编程不仅仅是代码，更是解决问题的艺术。"
+<span class="name-switch"><span class="name">**Trashwbin**</span><span class="name">**Abin**</span></span>
+<br>
+一名热爱技术的*开发者*，来自中国！
+<br>
+我热衷于 **后端开发**，同时对 *前端*、*算法* 和 *人工智能* 充满兴趣。
+<br>
+热爱 `开源`，希望能为开源社区做出贡献。
+<br>
+如果您有任何问题或想法，欢迎随时与我 [交流](mailto:Trashwbin@gmail.com)！

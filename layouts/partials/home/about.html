@@ -1,0 +1,406 @@
+<div class="about-container">
+  <div class="about-content">
+    <div class="profile">
+      <div class="avatar-container">
+        <img src="images/Abin.png" alt="Abin" class="avatar"
+          style="width: 100%; height: 100%; min-width: 100%; min-height: 100%; object-fit: cover;">
+        <div class="avatar-backdrop"></div>
+      </div>
+      <div class="profile-text">
+        {{ .Content | markdownify }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .about-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .about-content {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    transform: translateY(20px);
+    opacity: 0;
+    animation: slideUp 0.8s ease forwards;
+  }
+
+  .avatar-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 1rem;
+  }
+
+  .avatar {
+    width: 100% !important;
+    height: 100% !important;
+    min-width: 100%;
+    min-height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .avatar-backdrop {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 220px;
+    height: 220px;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(45deg, #f39c12, #e74c3c);
+    border-radius: 50%;
+    z-index: 1;
+    opacity: 0.2;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .avatar-container:hover .avatar {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+  }
+
+  .avatar-container:hover .avatar-backdrop {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 0.3;
+  }
+
+  .profile-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #2c3e50;
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+    padding: 1.5rem;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translateY(20px);
+    opacity: 0;
+    animation: slideUp 0.8s ease 0.2s forwards;
+  }
+
+  /* 添加新的文字样式 */
+  .profile-text strong {
+    color: #f39c12;
+    font-weight: 600;
+    position: relative;
+    white-space: nowrap;
+  }
+
+  .profile-text strong::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #f39c12, #e74c3c);
+    opacity: 0.3;
+    border-radius: 2px;
+  }
+
+  .profile-text em {
+    font-style: normal;
+    color: #e74c3c;
+    font-weight: 500;
+  }
+
+  .profile-text code {
+    background: linear-gradient(120deg, #f39c12 0%, #e74c3c 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 0 0.2em;
+    font-family: inherit;
+    font-weight: 600;
+  }
+
+  .profile-text a {
+    color: #3498db;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+
+  .profile-text a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #3498db, #2980b9);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    transform-origin: right;
+  }
+
+  .profile-text a:hover {
+    color: #2980b9;
+  }
+
+  .profile-text a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  /* 添加关键词高亮效果 */
+  .profile-text .highlight {
+    display: inline-block;
+    position: relative;
+    padding: 0 0.4em;
+  }
+
+  .profile-text .highlight::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 0.5em;
+    background-color: rgba(243, 156, 18, 0.2);
+    z-index: -1;
+    transform: skewX(-15deg);
+  }
+
+  .profile-text p {
+    margin-bottom: 1rem;
+  }
+
+  .profile-text p:last-child {
+    margin-bottom: 0;
+  }
+
+  @keyframes slideUp {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .about-container {
+      padding: 2rem 1rem;
+    }
+
+    .avatar-container {
+      width: 160px;
+      height: 160px;
+      margin-bottom: 0.5rem;
+    }
+
+    .avatar-backdrop {
+      width: 170px;
+      height: 170px;
+    }
+
+    .profile {
+      padding: 1.5rem;
+      gap: 1.5rem;
+    }
+
+    .profile-text {
+      font-size: 1.1rem;
+      padding: 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .avatar-container {
+      width: 140px;
+      height: 140px;
+    }
+
+    .avatar-backdrop {
+      width: 150px;
+      height: 150px;
+    }
+
+    .profile {
+      padding: 1rem;
+      gap: 1rem;
+    }
+
+    .name-switch {
+      min-width: 120px;
+    }
+  }
+
+  /* 添加装饰性背景元素 */
+  .about-container::before,
+  .about-container::after {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #f39c12, #e74c3c);
+    opacity: 0.05;
+    z-index: 1;
+  }
+
+  .about-container::before {
+    top: -150px;
+    left: -150px;
+  }
+
+  .about-container::after {
+    bottom: -150px;
+    right: -150px;
+  }
+
+  /* 名字切换动画样式 */
+  .name-switch {
+    display: inline-flex;
+    position: relative;
+    height: 2em;
+    vertical-align: bottom;
+    overflow: hidden;
+    margin: 0 0.2em;
+    min-width: 150px;
+  }
+
+  .name-switch .name {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    animation: nameSwitch 4s ease-in-out infinite;
+    transform-origin: 50% 100%;
+    text-align: center;
+  }
+
+  .name-switch .name strong {
+    color: transparent !important;
+    background: linear-gradient(120deg, #f39c12, #e74c3c);
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-size: 1.4em;
+    position: relative;
+    display: inline-block;
+    padding: 0 0.1em;
+    white-space: nowrap;
+    line-height: 1.5;
+  }
+
+  .name-switch .name:nth-child(1) {
+    position: relative;
+  }
+
+  .name-switch .name:nth-child(2) {
+    animation-delay: 2s;
+  }
+
+  .name-switch .name strong::after {
+    display: none !important;
+  }
+
+  @keyframes nameSwitch {
+
+    0%,
+    45%,
+    100% {
+      transform: translateY(100%);
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    50%,
+    95% {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  /* 添加模糊效果 */
+  .name-switch::before,
+  .name-switch::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg,
+        transparent,
+        rgba(243, 156, 18, 0.2),
+        rgba(231, 76, 60, 0.2),
+        transparent);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .name-switch::before {
+    top: 0;
+  }
+
+  .name-switch::after {
+    bottom: 0;
+  }
+
+  /* 悬停效果 */
+  .name-switch .name strong::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #f39c12, #e74c3c);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+
+  .name-switch:hover .name strong::before {
+    transform: scaleX(1);
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // 已有的脚本保持不变
+
+    // 添加名字切换的交互
+    const nameSwitch = document.querySelector('.name-switch');
+    if (nameSwitch) {
+      nameSwitch.addEventListener('mouseenter', function () {
+        this.style.animationPlayState = 'paused';
+      });
+
+      nameSwitch.addEventListener('mouseleave', function () {
+        this.style.animationPlayState = 'running';
+      });
+    }
+  });
+</script>

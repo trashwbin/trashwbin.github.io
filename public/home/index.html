@@ -13,13 +13,13 @@
 <meta name="referrer" content="no-referrer">
 <meta name="description" content="一名热爱技术的开发者">
 <title>
-Hi , I&#39;m Abin - Trashwbin的个人空间
+Hi , I&#39;m Span Class &#39;Title Name Switch&#39; Span Class &#39;Title Name Switch Original&#39; Trashwbin Span Span - Trashwbin的个人空间
 </title>
 
 
 
         
-        <meta property="og:title" content="Hi 👋, I&rsquo;m Abin - Trashwbin的个人空间" />
+        <meta property="og:title" content="Hi , I&rsquo;m Trashwbin - Trashwbin的个人空间" />
 <meta property="og:type" content="website" />
 <meta property="og:description" content="一名热爱技术的开发者"/>
 <meta property="og:url" content="http://localhost:1313/home/"/>
@@ -56,7 +56,7 @@ Hi , I&#39;m Abin - Trashwbin的个人空间
             
             <div class="container hero  fade-in one ">
                 
-                <h1 class="bold-title is-1">Hi 👋, I&rsquo;m Abin</h1>
+                <h1 class="bold-title is-1">Hi , I&rsquo;m <span class='title-name-switch'><span class='title-name-switch-original'>Trashwbin</span></span></h1>
                 
             </div>
             
@@ -134,32 +134,138 @@ Hi , I&#39;m Abin - Trashwbin的个人空间
 
 <div class="hero-content" style="text-align: center; padding: 2rem;">
   
-  <img src="https://raw.githubusercontent.com/trashwbin/Trashwbin/refs/heads/main/assets/cat.gif" alt="avatar" style="width: 120px; margin-bottom: 1rem;">
-  
 
   
-  <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">欢迎来到我的空间 🚀</h1>
+  <h1 class="welcome-title">
+    <span class="welcome-line">欢迎来到</span>
+    <span class="welcome-line">我的空间</span>
+    <span class="welcome-line">🚀</span>
+  </h1>
   
 
   <div style="font-size: 1.2rem; color: #666;">
     
-    <p>我是一名热爱技术的开发者，来自中国！欢迎来到我的数字空间！🥰</p>
-    
 
-    
-    <p>正在我的第二年，深入探索软件工程的世界。热衷于后端开发，对前端、算法和人工智能充满兴趣。</p>
     
   </div>
 
   <div class="tech-stack" style="margin-top: 2rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
     
-    <span style="background: #007bff; color: white; padding: 0.5rem 1rem; border-radius: 20px;">后端开发</span>
-    <span style="background: #28a745; color: white; padding: 0.5rem 1rem; border-radius: 20px;">算法</span>
-    <span style="background: #dc3545; color: white; padding: 0.5rem 1rem; border-radius: 20px;">AI</span>
-    <span style="background: #ffc107; color: white; padding: 0.5rem 1rem; border-radius: 20px;">前端</span>
-
   </div>
 </div>
+
+<style>
+  .welcome-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .welcome-line:nth-child(1),
+  .welcome-line:nth-child(2) {
+    background: linear-gradient(120deg, #f39c12, #e74c3c);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  @media (min-width: 769px) {
+    .welcome-title {
+      flex-direction: row;
+      gap: 0.5rem;
+      justify-content: center;
+    }
+
+    .welcome-line:last-child {
+      margin-left: 0.5rem;
+    }
+  }
+
+  .title-name-switch {
+    position: relative;
+    display: inline-block;
+    min-width: 120px;
+    color: #f39c12;
+  }
+
+  .title-name-switch .title-name-switch-original {
+    animation: fadeOriginal 6s infinite;
+  }
+
+  .title-name-switch::after {
+    content: 'Abin . ';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    opacity: 0;
+    color: #e74c3c;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 6s steps(20) infinite;
+  }
+
+  @keyframes typing {
+
+    0%,
+    45% {
+      width: 0;
+      opacity: 0;
+    }
+
+    50%,
+    95% {
+      width: 100%;
+      opacity: 1;
+    }
+
+    100% {
+      width: 0;
+      opacity: 0;
+    }
+  }
+
+  @keyframes fadeOriginal {
+
+    0%,
+    45% {
+      opacity: 1;
+    }
+
+    50%,
+    95% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .title-name-switch {
+      min-width: 90px;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const nameSwitch = document.querySelector('.title-name-switch');
+    if (nameSwitch) {
+      nameSwitch.addEventListener('mouseenter', function () {
+        this.style.animationPlayState = 'paused';
+      });
+
+      nameSwitch.addEventListener('mouseleave', function () {
+        this.style.animationPlayState = 'running';
+      });
+    }
+  });
+</script>
 
     </div>
     

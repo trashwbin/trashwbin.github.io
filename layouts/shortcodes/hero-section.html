@@ -9,7 +9,11 @@
   {{ end }}
 
   {{ with $title }}
-  <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">{{ . }}</h1>
+  <h1 class="welcome-title">
+    <span class="welcome-line">欢迎来到</span>
+    <span class="welcome-line">我的空间</span>
+    <span class="welcome-line">🚀</span>
+  </h1>
   {{ end }}
 
   <div style="font-size: 1.2rem; color: #666;">
@@ -26,3 +30,116 @@
     {{ .Inner }}
   </div>
 </div>
+
+<style>
+  .welcome-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .welcome-line:nth-child(1),
+  .welcome-line:nth-child(2) {
+    background: linear-gradient(120deg, #f39c12, #e74c3c);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  @media (min-width: 769px) {
+    .welcome-title {
+      flex-direction: row;
+      gap: 0.5rem;
+      justify-content: center;
+    }
+
+    .welcome-line:last-child {
+      margin-left: 0.5rem;
+    }
+  }
+
+  .title-name-switch {
+    position: relative;
+    display: inline-block;
+    min-width: 120px;
+    color: #f39c12;
+  }
+
+  .title-name-switch .title-name-switch-original {
+    animation: fadeOriginal 6s infinite;
+  }
+
+  .title-name-switch::after {
+    content: 'Abin . ';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    opacity: 0;
+    color: #e74c3c;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 6s steps(20) infinite;
+  }
+
+  @keyframes typing {
+
+    0%,
+    45% {
+      width: 0;
+      opacity: 0;
+    }
+
+    50%,
+    95% {
+      width: 100%;
+      opacity: 1;
+    }
+
+    100% {
+      width: 0;
+      opacity: 0;
+    }
+  }
+
+  @keyframes fadeOriginal {
+
+    0%,
+    45% {
+      opacity: 1;
+    }
+
+    50%,
+    95% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .title-name-switch {
+      min-width: 90px;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const nameSwitch = document.querySelector('.title-name-switch');
+    if (nameSwitch) {
+      nameSwitch.addEventListener('mouseenter', function () {
+        this.style.animationPlayState = 'paused';
+      });
+
+      nameSwitch.addEventListener('mouseleave', function () {
+        this.style.animationPlayState = 'running';
+      });
+    }
+  });
+</script>
