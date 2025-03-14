@@ -1,5 +1,5 @@
 ---
-title: "我的技能"
+title: "技能属性"
 draft: false
 weight: 3
 --- 

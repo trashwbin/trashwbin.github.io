@@ -25,12 +25,12 @@ defaultContentLanguageInSubdir = true  # 为每种语言创建子目录
     
     # 添加导航设置
     showMenu = true
-    showServices = false
+    showServices = true
     showProjects = true
-    showBlog = false
+    showBlog = true
     showContact = true
     showAbout = true
-
+    
     # 个人信息
     firstName = "Abin"
     lastName = ""

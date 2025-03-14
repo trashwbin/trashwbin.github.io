@@ -33,19 +33,19 @@
       <div class="container">
         <hr>
         <nav class="navbar" role="navigation" aria-label="main navigation">
-          <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+          <!-- <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
-          </a>
+          </a> -->
           <div class="navbar-menu has-content-centered" id="navMenu">
-            <a class="navbar-item" href="/">{{ i18n "nav_home" }}</a>
-            <a class="navbar-item" href="/#about">{{ i18n "nav_about" }}</a>
-            <a class="navbar-item" href="/#skills">{{ i18n "nav_skills" }}</a>
+            <!-- <a class="navbar-item" href="{{ .Site.LanguagePrefix }}/">{{ i18n "nav_home" }}</a> -->
+            <a class="navbar-item" href="{{ .Site.LanguagePrefix }}/#about">{{ i18n "nav_about" }}</a>
+            <a class="navbar-item" href="{{ .Site.LanguagePrefix }}/#skills">{{ i18n "nav_skills" }}</a>
             <a class="navbar-item" target="_blank"
               href="https://github.com/trashwbin?tab=repositories&q=&type=&language=&sort=stargazers">{{ i18n
               "nav_projects" }}</a>
-            <a class="navbar-item" href="/#contact">{{ i18n "nav_contact" }}</a>
+            <a class="navbar-item" href="{{ .Site.LanguagePrefix }}/#contact">{{ i18n "nav_contact" }}</a>
             <!-- 添加语言切换按钮 -->
             {{ if eq .Site.Language.Lang "zh" }}
             <a class="navbar-item" href="/en">English</a>
