@@ -1,0 +1,56 @@
+<!-- 自定义头部内容 -->
+<style>
+  :root {
+    --primary-color: #2c3e50;
+    --accent-color: #f39c12;
+    --text-color: #333;
+    --light-bg: #f8f9fa;
+  }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  /* 导航栏样式 */
+  .navbar {
+    background-color: transparent;
+  }
+
+  .navbar-menu {
+    justify-content: center;
+    display: flex;
+  }
+
+  .navbar-item {
+    color: var(--primary-color);
+    font-weight: 500;
+    padding: 0.5rem 1.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .navbar-item:hover {
+    color: var(--accent-color);
+    background-color: transparent;
+  }
+
+  .navbar-burger {
+    color: var(--primary-color);
+  }
+
+  @media screen and (max-width: 1023px) {
+    .navbar-menu.is-active {
+      background-color: white;
+      box-shadow: 0 8px 16px rgba(10, 10, 10, 0.1);
+      padding: 0.5rem 0;
+    }
+
+    .navbar-menu.is-active .navbar-item {
+      text-align: center;
+    }
+  }
+</style>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />

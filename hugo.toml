@@ -1,0 +1,75 @@
+baseURL = 'http://localhost:1313/'
+languageCode = 'zh-cn'
+title = 'Trashwbin的个人空间'
+theme = 'introduction'
+DefaultContentLanguage = "zh"
+
+# 添加 Markdown 渲染配置
+[markup]
+  defaultMarkdownHandler = "goldmark"
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true  # 允许 HTML
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = false
+    style = "monokai"
+
+[params]
+    themeStyle = "light"
+    favicon = "favicon.ico"
+    showRSSButton = false
+    fadeIn = true
+    fadeInIndex = false
+    
+    # 添加导航设置
+    showMenu = true
+    showServices = false
+    showProjects = true
+    showBlog = false
+    showContact = true
+    showAbout = true
+
+    # 个人信息
+    firstName = "Abin"
+    lastName = ""
+    tagLine = "一名热爱技术的开发者"
+    
+    # 社交媒体链接
+    [[params.social]]
+        url = "https://gitee.com/trashwbin"
+        icon = "fab fa-git-alt"
+        
+    [[params.social]]
+        url = "mailto:Trashwbin@gmail.com"
+        icon = "fas fa-envelope"
+
+[languages]
+    [languages.zh]
+        languageName = "中文"
+        weight = 1
+        title = "Trashwbin的个人空间"
+        
+        [languages.zh.params]
+            description = "一名热爱技术的开发者"
+            # 自定义导航菜单
+            [[languages.zh.menu.main]]
+                name = "主页"
+                url = "/"
+                weight = 1
+            [[languages.zh.menu.main]]
+                name = "关于"
+                url = "/#about"
+                weight = 2
+            [[languages.zh.menu.main]]
+                name = "技能"
+                url = "/#skills"
+                weight = 3
+            [[languages.zh.menu.main]]
+                name = "项目"
+                url = "/#projects"
+                weight = 4
+            [[languages.zh.menu.main]]
+                name = "联系"
+                url = "/#contact"
+                weight = 5

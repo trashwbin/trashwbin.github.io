@@ -1,0 +1,28 @@
+{{ $avatar := .Get "avatar" }}
+{{ $title := .Get "title" }}
+{{ $subtitle := .Get "subtitle" }}
+{{ $description := .Get "description" }}
+
+<div class="hero-content" style="text-align: center; padding: 2rem;">
+  {{ with $avatar }}
+  <img src="{{ . }}" alt="avatar" style="width: 120px; margin-bottom: 1rem;">
+  {{ end }}
+
+  {{ with $title }}
+  <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">{{ . }}</h1>
+  {{ end }}
+
+  <div style="font-size: 1.2rem; color: #666;">
+    {{ with $subtitle }}
+    <p>{{ . }}</p>
+    {{ end }}
+
+    {{ with $description }}
+    <p>{{ . }}</p>
+    {{ end }}
+  </div>
+
+  <div class="tech-stack" style="margin-top: 2rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+    {{ .Inner }}
+  </div>
+</div>

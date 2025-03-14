@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>项目展示 on Trashwbin的个人空间</title>
+    <link>http://localhost:1313/projects/</link>
+    <description>Recent content in 项目展示 on Trashwbin的个人空间</description>
+    <generator>Hugo</generator>
+    <language>zh</language>
+    <lastBuildDate>Fri, 14 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>个人网站</title>
+      <link>http://localhost:1313/projects/personal-website/</link>
+      <pubDate>Fri, 14 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/personal-website/</guid>
+      <description>&lt;h3 id=&#34;个人网站项目&#34; class=&#34;anchor-link&#34;&gt;&lt;a href=&#34;#%e4%b8%aa%e4%ba%ba%e7%bd%91%e7%ab%99%e9%a1%b9%e7%9b%ae&#34;&gt;个人网站项目&lt;/a&gt;&lt;/h3&gt;&#xD;&#xA;&lt;p&gt;这是我的第一个个人项目 - 使用 Hugo 构建的个人网站。&lt;/p&gt;&#xA;&#xD;&#xA;&lt;h4 id=&#34;技术栈&#34; class=&#34;anchor-link&#34;&gt;&lt;a href=&#34;#%e6%8a%80%e6%9c%af%e6%a0%88&#34;&gt;技术栈&lt;/a&gt;&lt;/h4&gt;&#xD;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Hugo 静态网站生成器&lt;/li&gt;&#xA;&lt;li&gt;Introduction 主题&lt;/li&gt;&#xA;&lt;li&gt;Markdown&lt;/li&gt;&#xA;&lt;li&gt;HTML/CSS&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&#xD;&#xA;&lt;h4 id=&#34;特点&#34; class=&#34;anchor-link&#34;&gt;&lt;a href=&#34;#%e7%89%b9%e7%82%b9&#34;&gt;特点&lt;/a&gt;&lt;/h4&gt;&#xD;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;响应式设计&lt;/li&gt;&#xA;&lt;li&gt;简洁现代的界面&lt;/li&gt;&#xA;&lt;li&gt;支持中文&lt;/li&gt;&#xA;&lt;li&gt;个性化定制&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&#xD;&#xA;&lt;h4 id=&#34;开发中&#34; class=&#34;anchor-link&#34;&gt;&lt;a href=&#34;#%e5%bc%80%e5%8f%91%e4%b8%ad&#34;&gt;开发中&amp;hellip;&lt;/a&gt;&lt;/h4&gt;&#xD;&#xA;&lt;p&gt;这个网站将持续更新，添加更多功能和内容。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
