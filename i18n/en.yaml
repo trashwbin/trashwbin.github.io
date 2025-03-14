@@ -1,0 +1,41 @@
+# Navigation menu
+nav_home: "Home"
+nav_about: "About"
+nav_skills: "Skills"
+nav_projects: "Projects"
+nav_contact: "Contact"
+
+# Home page
+greeting: "Hi, I'm"
+welcome_line1: "Welcome to"
+welcome_line2: "my space"
+welcome_emoji: "🚀"
+
+# Page titles
+about_title: "About Me"
+skills_title: "Skills"
+projects_title: "Projects"
+contact_title: "Contact Me"
+
+# About page
+about_avatar_alt: "Abin's Avatar"
+about_intro: "A passionate developer"
+about_backend: "backend development"
+about_interests: "frontend, algorithms, and artificial intelligence"
+about_opensource: "open source"
+about_contact: "contact me"
+
+# Contact page
+contact_header: "Let's Connect! 👋"
+contact_description: "I'm collaborating with individuals from diverse fields, which is precisely why I created this website."
+contact_highlight: "Feel free to contact me."
+contact_findme: "Find me on:"
+contact_email: "Email"
+contact_github: "GitHub"
+contact_gitee: "Gitee"
+contact_reach_out: "Feel free to reach out if you:"
+contact_reason1: "Have questions about my projects"
+contact_reason2: "Want to collaborate on something cool"
+contact_reason3: "Just want to say hi"
+contact_footer1: "✨ Love open source and looking forward to starting my own projects"
+contact_footer2: "🤝 Passionate about collaboration, let's create something interesting together!" 

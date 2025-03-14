@@ -1,0 +1,41 @@
+# 导航菜单
+nav_home: "首页"
+nav_about: "关于"
+nav_skills: "技能"
+nav_projects: "项目"
+nav_contact: "联系"
+
+# 首页
+greeting: "Hi, I'm"
+welcome_line1: "欢迎来到"
+welcome_line2: "我的空间"
+welcome_emoji: "🚀"
+
+# 页面标题
+about_title: "关于我"
+skills_title: "技能专长"
+projects_title: "项目展示"
+contact_title: "联系方式"
+
+# 关于页面
+about_avatar_alt: "Abin的头像"
+about_intro: "一名热爱技术的开发者"
+about_backend: "后端开发"
+about_interests: "前端、算法和人工智能"
+about_opensource: "开源"
+about_contact: "交流"
+
+# 联系页面
+contact_header: "让我们聊聊！👋"
+contact_description: "我正在与来自不同领域的人们合作，这正是我创建这个网站的原因。"
+contact_highlight: "随时欢迎与我联系"
+contact_findme: "在这里找到我："
+contact_email: "邮箱"
+contact_github: "GitHub"
+contact_gitee: "Gitee"
+contact_reach_out: "如果您："
+contact_reason1: "对我的项目有疑问"
+contact_reason2: "想一起合作做些有趣的事"
+contact_reason3: "只是想打个招呼"
+contact_footer1: "✨ 热爱开源，期待有朝一日能启动自己的项目"
+contact_footer2: "🤝 对合作充满热情，让我们一起创造有趣的项目！" 

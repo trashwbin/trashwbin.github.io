@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode }}">
+<html lang="{{ .Site.Language.Lang }}">
 
 <head>
   {{ partial "head/metadata.html" . }}
@@ -12,24 +12,22 @@
 <body>
   {{ with .Site.GetPage "/home" }}
   <section id="top" class="hero is-fullheight">
-    <!-- Hero head section to play nice with Bulma -->
+    <!-- Hero head section -->
     <div class="hero-head"></div>
 
-    <!-- Super sweet Hero body title -->
+    <!-- Hero body title -->
     <div class="hero-body">
       <div class="container has-text-centered">
-        <!-- Title and tagline -->
         <h1 class="bold-title fade-in one">
-          Hi, I'm <span class="title-name-switch">
+          {{ i18n "greeting" }} <span class="title-name-switch">
             <span class="title-name-switch-original">Trashwbin</span>
           </span>
         </h1>
         <div class="subtitle is-3 fade-in two">
           {{ .Content }}
         </div>
-        <!-- End title and tagline -->
       </div>
-    </div> <!-- End of Hero body -->
+    </div>
 
     <div class="hero-foot">
       <div class="container">
@@ -41,19 +39,26 @@
             <span aria-hidden="true"></span>
           </a>
           <div class="navbar-menu has-content-centered" id="navMenu">
-            <a class="navbar-item" href="/">首页</a>
-            <a class="navbar-item" href="/#about">关于</a>
-            <a class="navbar-item" href="/#skills">技能</a>
+            <a class="navbar-item" href="/">{{ i18n "nav_home" }}</a>
+            <a class="navbar-item" href="/#about">{{ i18n "nav_about" }}</a>
+            <a class="navbar-item" href="/#skills">{{ i18n "nav_skills" }}</a>
             <a class="navbar-item" target="_blank"
-              href="https://github.com/trashwbin?tab=repositories&q=&type=&language=&sort=stargazers">项目</a>
-            <a class="navbar-item" href="/#contact">联系</a>
+              href="https://github.com/trashwbin?tab=repositories&q=&type=&language=&sort=stargazers">{{ i18n
+              "nav_projects" }}</a>
+            <a class="navbar-item" href="/#contact">{{ i18n "nav_contact" }}</a>
+            <!-- 添加语言切换按钮 -->
+            {{ if eq .Site.Language.Lang "zh" }}
+            <a class="navbar-item" href="/en">English</a>
+            {{ else }}
+            <a class="navbar-item" href="/zh">中文</a>
+            {{ end }}
           </div>
         </nav>
         <hr>
       </div>
     </div>
     {{ end }}
-  </section> <!-- Done with Hero -->
+  </section>
 
   {{ with .Site.GetPage "/home" }}
   {{ $home := . }}
