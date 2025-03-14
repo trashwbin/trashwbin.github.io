@@ -115,7 +115,9 @@ Trashwbin的个人空间
       <div class="container has-text-centered">
         
         <h1 class="bold-title fade-in one">
-          Hi , I&rsquo;m <span class='title-name-switch'><span class='title-name-switch-original'>Trashwbin</span></span>
+          Hi, I'm <span class="title-name-switch">
+            <span class="title-name-switch-original">Trashwbin</span>
+          </span>
         </h1>
         <div class="subtitle is-3 fade-in two">
           
@@ -276,7 +278,8 @@ Trashwbin的个人空间
             <a class="navbar-item" href="/">首页</a>
             <a class="navbar-item" href="/#about">关于</a>
             <a class="navbar-item" href="/#skills">技能</a>
-            <a class="navbar-item" href="/#projects">项目</a>
+            <a class="navbar-item" target="_blank"
+              href="https://github.com/trashwbin?tab=repositories&q=&type=&language=&sort=stargazers">项目</a>
             <a class="navbar-item" href="/#contact">联系</a>
           </div>
         </nav>
@@ -1276,6 +1279,16 @@ Trashwbin的个人空间
   
   
 
+  
+  <div class="back-to-top" id="back-to-top">
+    <a href="#top" aria-label="返回顶部">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="back-to-top-icon">
+        <path d="M18 15l-6-6-6 6" />
+      </svg>
+    </a>
+  </div>
+
   <footer class="footer">
     <div class="container">
       <div class="content has-text-centered">
@@ -1299,6 +1312,67 @@ Trashwbin的个人空间
   </footer>
 
   <style>
+    .title-name-switch {
+      position: relative;
+      display: inline-block;
+      min-width: 120px;
+      color: #f39c12;
+    }
+
+    .title-name-switch .title-name-switch-original {
+      animation: fadeOriginal 6s infinite;
+    }
+
+    .title-name-switch::after {
+      content: 'Abin';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 0;
+      opacity: 0;
+      color: #e74c3c;
+      overflow: hidden;
+      white-space: nowrap;
+      animation: typing 6s steps(20) infinite;
+    }
+
+    @keyframes typing {
+
+      0%,
+      45% {
+        width: 0;
+        opacity: 0;
+      }
+
+      50%,
+      95% {
+        width: 100%;
+        opacity: 1;
+      }
+
+      100% {
+        width: 0;
+        opacity: 0;
+      }
+    }
+
+    @keyframes fadeOriginal {
+
+      0%,
+      45% {
+        opacity: 1;
+      }
+
+      50%,
+      95% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
     .footer {
       padding: 2rem 0;
       margin-top: 8rem;
@@ -1328,6 +1402,68 @@ Trashwbin的个人空间
     .social-icon:hover {
       color: #475569;
     }
+
+     
+    .back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: white;
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 1000;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      color: #64748b;
+      transition: color 0.3s ease;
+    }
+
+    .back-to-top:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .back-to-top:hover a {
+      color: #f39c12;
+    }
+
+    .back-to-top-icon {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .back-to-top {
+        bottom: 1.5rem;
+        right: 1.5rem;
+        width: 2.5rem;
+        height: 2.5rem;
+      }
+
+      .back-to-top-icon {
+        width: 1.2rem;
+        height: 1.2rem;
+      }
+    }
   </style>
 
   
@@ -1351,6 +1487,26 @@ Trashwbin的个人空间
           });
         });
       }
+
+      
+      const backToTop = document.getElementById('back-to-top');
+
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+          backToTop.classList.add('visible');
+        } else {
+          backToTop.classList.remove('visible');
+        }
+      });
+
+      
+      backToTop.querySelector('a').addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
     });
   </script>
 </body>

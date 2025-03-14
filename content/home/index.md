@@ -1,5 +1,6 @@
 ---
-title: "Hi , I'm <span class='title-name-switch'><span class='title-name-switch-original'>Trashwbin</span></span>"
+title: "Hi, I'm Trashwbin"
+titleSwitch: "Abin"
 draft: false
 ---
 
