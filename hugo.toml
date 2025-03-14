@@ -1,4 +1,4 @@
-baseURL = 'http://trashwbin.top/'
+baseURL = 'https://trashwbin.github.io/'
 languageCode = 'en-us'
 title = 'Trashwbin'
 theme = 'introduction'
