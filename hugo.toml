@@ -1,8 +1,8 @@
-baseURL = 'http://localhost:1313/'
-languageCode = 'zh-cn'
-title = 'Trashwbin的个人空间'
+baseURL = 'http://trashwbin.top/'
+languageCode = 'en-us'
+title = 'Trashwbin'
 theme = 'introduction'
-DefaultContentLanguage = "zh"
+DefaultContentLanguage = "en"
 defaultContentLanguageInSubdir = true  # 为每种语言创建子目录
 
 # 添加 Markdown 渲染配置
@@ -18,7 +18,7 @@ defaultContentLanguageInSubdir = true  # 为每种语言创建子目录
 
 [params]
     themeStyle = "light"
-    favicon = "favicon.ico"
+    favicon = "../icons/favicon.ico"
     showRSSButton = false
     fadeIn = true
     fadeInIndex = false
@@ -43,13 +43,16 @@ defaultContentLanguageInSubdir = true  # 为每种语言创建子目录
     [[params.social]]
         url = "mailto:Trashwbin@gmail.com"
         icon = "fas fa-envelope"
+    [[params.social]]
+        url = "https://github.com/Trashwbin"
+        icon = "fab fa-github"
 
 [languages]
     [languages.zh]
         languageName = "中文"
         contentDir = "content/zh"
         weight = 1
-        title = "Trashwbin的个人空间"
+        title = "Trashwbin"
         
         [languages.zh.params]
             description = "一名热爱技术的开发者"
@@ -60,7 +63,7 @@ defaultContentLanguageInSubdir = true  # 为每种语言创建子目录
         languageName = "English"
         contentDir = "content/en"
         weight = 2
-        title = "Trashwbin's Personal Space"
+        title = "Trashwbin"
         
         [languages.en.params]
             description = "A passionate developer"
