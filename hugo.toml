@@ -51,7 +51,7 @@ defaultContentLanguageInSubdir = true  # 为每种语言创建子目录
     [languages.zh]
         languageName = "中文"
         contentDir = "content/zh"
-        weight = 1
+        weight = 2
         title = "Trashwbin"
         
         [languages.zh.params]
@@ -62,7 +62,7 @@ defaultContentLanguageInSubdir = true  # 为每种语言创建子目录
     [languages.en]
         languageName = "English"
         contentDir = "content/en"
-        weight = 2
+        weight = 1
         title = "Trashwbin"
         
         [languages.en.params]
