@@ -46,11 +46,15 @@
               href="https://github.com/trashwbin?tab=repositories&q=&type=&language=&sort=stargazers">{{ i18n
               "nav_projects" }}</a>
             <a class="navbar-item" href="{{ .Site.LanguagePrefix }}/#contact">{{ i18n "nav_contact" }}</a>
-            <!-- 添加语言切换按钮 -->
-            {{ if eq .Site.Language.Lang "zh" }}
-            <a class="navbar-item" href="/en">English</a>
-            {{ else }}
-            <a class="navbar-item" href="/zh">中文</a>
+            <!-- 修改语言切换按钮 -->
+            {{ range .Site.Languages }}
+            {{ if ne . $.Site.Language }}
+            {{ $langURL := "/" }}
+            {{ if ne .Lang $.Site.Params.DefaultContentLanguage }}
+            {{ $langURL = printf "/%s/" .Lang }}
+            {{ end }}
+            <a class="navbar-item" href="{{ $langURL }}">{{ .LanguageName }}</a>
+            {{ end }}
             {{ end }}
           </div>
         </nav>

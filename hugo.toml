@@ -1,9 +1,9 @@
 baseURL = 'https://trashwbin.top/'
-languageCode = 'en-us'
+languageCode = 'zh-cn'
 title = 'Trashwbin'
 theme = 'introduction'
-DefaultContentLanguage = "en"
-defaultContentLanguageInSubdir = true  # 为每种语言创建子目录
+DefaultContentLanguage = "zh"
+defaultContentLanguageInSubdir = true  # 为所有语言创建子目录
 
 # 添加 Markdown 渲染配置
 [markup]
@@ -47,11 +47,13 @@ defaultContentLanguageInSubdir = true  # 为每种语言创建子目录
         url = "https://github.com/Trashwbin"
         icon = "fab fa-github"
 
+    DefaultContentLanguage = "zh"  # 添加这个参数用于模板中的判断
+
 [languages]
     [languages.zh]
         languageName = "中文"
         contentDir = "content/zh"
-        weight = 2
+        weight = 1
         title = "Trashwbin"
         
         [languages.zh.params]
@@ -62,7 +64,7 @@ defaultContentLanguageInSubdir = true  # 为每种语言创建子目录
     [languages.en]
         languageName = "English"
         contentDir = "content/en"
-        weight = 1
+        weight = 2
         title = "Trashwbin"
         
         [languages.en.params]

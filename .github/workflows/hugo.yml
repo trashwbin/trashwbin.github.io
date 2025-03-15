@@ -48,6 +48,22 @@ jobs:
         run: |
           hugo --minify
 
+      - name: Restructure public directory
+        run: |
+          # 创建临时目录
+          mkdir -p public/temp_root
+          # 备份中文版本到临时目录
+          mv public/zh/* public/temp_root/ || true
+          # 清理原始目录
+          rm -rf public/zh || true
+          # 将英文版本移动到根目录
+          mv public/en/* public/ || true
+          rm -rf public/en
+          # 将中文版本移动到zh目录
+          mkdir -p public/zh
+          mv public/temp_root/* public/zh/ || true
+          rm -rf public/temp_root
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
