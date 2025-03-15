@@ -54,12 +54,11 @@ jobs:
           mkdir -p public/temp_root
           # 备份中文版本到临时目录
           mv public/zh/* public/temp_root/ || true
-          # 清理原始目录
+          # 清理中文原始目录
           rm -rf public/zh || true
-          # 将英文版本移动到根目录
-          mv public/en/* public/ || true
-          rm -rf public/en
-          # 将中文版本移动到zh目录
+          # 复制英文版本到根目录（保持en目录不变）
+          cp -r public/en/* public/ || true
+          # 将中文版本移动回zh目录
           mkdir -p public/zh
           mv public/temp_root/* public/zh/ || true
           rm -rf public/temp_root
