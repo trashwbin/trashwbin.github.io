@@ -65,11 +65,16 @@ I'm collaborating with individuals from diverse fields, which is precisely why I
   text-decoration: none;
   color: #2c3e50;
   transition: all 0.3s ease;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
 .contact-link:hover {
   transform: translateY(-2px);
   color: #f39c12;
+  border-color: #f39c12;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .contact-icon {
